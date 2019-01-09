@@ -7,8 +7,8 @@ You can read this [tutorial](https://www.techiediaries.com/angular-tutorial) acc
 
 You can also check the [Angular 6 front-end](https://github.com/techiediaries/ng-crm).
 
-pipenv install
-pipenv shell
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+#pipenv install
+#pipenv shell
+#python manage.py migrate
+#python manage.py createsuperuser
+#python manage.py runserver
