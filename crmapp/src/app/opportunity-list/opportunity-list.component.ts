@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-opportunity-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpportunityListComponent implements OnInit {
 
-  constructor() { }
+  private opportunities: Array<object> = [];
+
+  constructor(private apiService: APIService) { }
 
   ngOnInit() {
+    this.getOpportunities();
+
+  }
+
+  public getOpportunities(){
+    this.apiService.getOpportunities().subscribe((data: Array<object>) => {
+
+      this.opportunities = data;
+      console.log(data);
+    });
   }
 
 }

@@ -1,3 +1,24 @@
-<p>
-  account-list works!
-</p>
+<h1>
+  My Accounts
+</h1>
+
+<div>
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Industry</th>
+          <th>Description</th>
+          <th>is Active</th>
+          <th>ID</th>
+
+        </tr>
+        <tr *ngFor="let account of accounts">
+          <td> {{ account.name }} </td>
+          <td> {{ account.industry }} </td>
+          <td> {{ account.description }} </td>
+          <td> {{ account.isActive }} </td>
+          <td> {{ account.account_id }} </td>
+        </tr>
+
+      </table>
+</div>

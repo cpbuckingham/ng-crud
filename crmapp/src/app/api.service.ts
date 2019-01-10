@@ -11,10 +11,14 @@ export class APIService {
 
   constructor(private httpClient: HttpClient) {}
 
+  //////////ACCOUNTS
   getAccounts(){
     return this.httpClient.get(`${this.API_URL}/accounts`);
   }
-
+  createAccount(account){
+    return this.httpClient.post(`${this.API_URL}/accounts/`,account);
+  }
+//////////CONTACTS
   getContacts(){
     return this.httpClient.get(`${this.API_URL}/contacts`);
   }
@@ -27,10 +31,18 @@ export class APIService {
   deleteContact(contact){
     return this.httpClient.delete(`${this.API_URL}/contacts/${contact.pk}`);
   }
+//////////LEADS
   getLeads(){
     return this.httpClient.get(`${this.API_URL}/leads`);
   }
+  createLead(lead){
+    return this.httpClient.post(`${this.API_URL}/leads/`,lead);
+  }
+//////////OPPORTUNITIES
   getOpportunities(){
     return this.httpClient.get(`${this.API_URL}/opportunities`);
+  }
+  createOpportunity(opportunity){
+    return this.httpClient.post(`${this.API_URL}/opportunities/`,opportunity);
   }
 }

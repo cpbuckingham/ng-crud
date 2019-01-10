@@ -1,3 +1,26 @@
-<p>
-  lead-list works!
-</p>
+<h1>
+  My Leads
+</h1>
+
+<div>
+    <table style="width:100%">
+        <tr>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Status</th>
+          <th>Account Manager</th>
+          <th>Amount</th>
+
+        </tr>
+        <tr *ngFor="let lead of leads">
+          <td> {{ account.first_name }} </td>
+          <td> {{ account.email }} </td>
+          <td> {{ account.phone }} </td>
+          <td> {{ account.status }} </td>
+          <td> {{ account.assigned_to }} </td>
+          <td> {{ account.opportunity_amount }} </td>
+        </tr>
+
+      </table>
+</div>

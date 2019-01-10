@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-account-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountListComponent implements OnInit {
 
-  constructor() { }
+  private accounts: Array<object> = [];
+
+  constructor(private apiService: APIService) { }
 
   ngOnInit() {
+    this.getAccounts();
+
+  }
+
+  public getAccounts(){
+    this.apiService.getAccounts().subscribe((data: Array<object>) => {
+
+      this.accounts = data;
+      console.log(data);
+    });
   }
 
 }

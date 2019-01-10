@@ -1,3 +1,26 @@
-<p>
-  opportunity-list works!
-</p>
+<h1>
+  My Opportunities
+</h1>
+
+<div>
+    <table style="width:100%">
+        <tr>
+          <th>Name</th>
+          <th>Stage</th>
+          <th>Amount</th>
+          <th>lead_source</th>
+          <th>Description</th>
+          <th>is Active?</th>
+
+        </tr>
+        <tr *ngFor="let opportunity of opportunities">
+          <td> {{ opportunity.name }} </td>
+          <td> {{ opportunity.stage }} </td>
+          <td> {{ opportunity.amount }} </td>
+          <td> {{ opportunity.lead_source }} </td>
+          <td> {{ opportunity.description }} </td>
+          <td> {{ opportunity.isActive }} </td>
+        </tr>
+
+      </table>
+</div>

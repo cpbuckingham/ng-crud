@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-lead-list',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeadListComponent implements OnInit {
 
-  constructor() { }
+  private leads: Array<object> = [];
+
+  constructor(private apiService: APIService) { }
 
   ngOnInit() {
+    this.getLeads();
+
+  }
+
+  public getLeads(){
+    this.apiService.getLeads().subscribe((data: Array<object>) => {
+
+      this.leads = data;
+      console.log(data);
+    });
   }
 
 }
