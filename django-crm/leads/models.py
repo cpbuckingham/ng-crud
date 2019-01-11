@@ -36,7 +36,7 @@ class Lead(models.Model):
 
     website = models.CharField("Website", max_length=255, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
-    assigned_to = models.ManyToManyField(User, related_name='lead_assigned_users')    
+    assigned_to = models.ManyToManyField(User, related_name='lead_assigned_users')
     account_name = models.CharField(max_length=255, null=True, blank=True)
     opportunity_amount = models.DecimalField("Opportunity Amount", decimal_places=2, max_digits=12,
         blank=True, null=True)
